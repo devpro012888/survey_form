@@ -14,15 +14,15 @@
     <form id="survey-form">
         <fieldset class="fieldset1">
             <legend>Member Information</legend>
-            <label for="name">First Name</label>
+            <label for="name" id="name-label">First Name</label>
             <input id="name" type="text" required placeholder="Joe">
             <br>
-            <label for="name">Last Name</label>
+            <label for="name" id="name-label">Last Name</label>
             <input id="name" type="text" required placeholder="Coastie">
             <br>
             <label for="rank">Rank</label>
             <select id="rank" required>
-                <option value="Select Rank">Select Rank</option>
+                <option value="" disabled selected>Select Rank</option>
                 <option value="YNCM">YNCM</option>
                 <option value="YNCS">YNCS</option>
                 <option value="YNC">YNC</option>
@@ -31,20 +31,20 @@
                 <option value="YN3">YN3</option>
             </select>
             <br>
-            <label for="email">Email</label>
-            <input id="email" type="email" required>
+            <label for="email" id="email-label">Email</label>
+            <input id="email" type="email" required placeholder="Joe.Coastie@uscg.mil">
             <br>
             <label for="unit">Unit</label>
-            <input id="unit" type="text" required>
+            <input id="unit" type="text" required placeholder="Enter your unit">
             <br>
-            <label for="number">Years of Service</label>
-            <input id="number"type="number" min="0" max="30" required>
+            <label for="number" id="number-label">Years of Service</label>
+            <input id="number" type="number" min="0" max="30" required placeholder="0">
         </fieldset>
-        <fieldset>
-            <legend>Supervisor Information</legend>
-              <label for="name-label">First Name</label>
-                <input id="name-label" type="text" required placeholder="Joe">
+        <fieldset class="fieldset2">
+            <legend>Additional Information</legend>
+            <textarea id="comments" rows="10" cols="70" placeholder="Enter any additional comments here..."></textarea>
         </fieldset>
+        <input type="submit" id="submit" value="Submit Form">
     </form>
 </body>
 </html>

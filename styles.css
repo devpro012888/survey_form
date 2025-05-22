@@ -16,3 +16,15 @@ p {
     padding: 20px;
     margin: 20px;
 }
+
+.fieldset2 {
+    border: 2px solid black;
+    padding: 20px;
+    margin: 20px;
+}
+
+input[type="submit"] {
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+}
