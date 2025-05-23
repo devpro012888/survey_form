@@ -4,6 +4,10 @@ body {
     background-color: darkgray;
 }
 
+p {
+    text-align: justify;
+}
+
 h1 {
     text-align: center;
 }
@@ -20,7 +24,7 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 12px;
+    gap: 0;
     background-color: white;
 }
 
@@ -37,28 +41,7 @@ h1 {
     display: none;
 }
 
-.fieldset2 {
-    border: 2px solid black;
-    padding: 20px;
-    margin: 20px;
-    background-color: white;
-}
-
-.fieldset3 {
-    border: 2px solid black;
-    padding: 20px;
-    margin: 20px;
-    background-color: white;
-}
-
-.fieldset4 {
-    border: 2px solid black;
-    padding: 20px;
-    margin: 20px;
-    background-color: white;
-}
-
-.fieldset5 {
+.form-section {
     border: 2px solid black;
     padding: 20px;
     margin: 20px;
@@ -70,4 +53,60 @@ input[type="submit"] {
     margin: 0 auto;
     cursor: pointer;
     margin-bottom: 15px;
+}
+
+input[type="submit"]:hover,
+input[type="submit"]:focus {
+    background-color: #e0e0e0;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12px;
+}
+
+@media (max-width: 900px) {
+    body {
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+/*CSS for Progress Bar*/
+.progress-container {
+  width: 100%;
+  background-color: #e0e0e0;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 20px;
+  margin-bottom: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  border-radius: 0;
+  overflow: hidden;
+}
+
+
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background-color: #4caf50;
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 20px;
+  position: fixed;
+  top: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1001;
+  background-color: white;
+  padding: 2px 8px;
+  font-weight: bold;
 }

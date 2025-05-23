@@ -5,8 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yeoman Survey Form</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="ynsurvey.js" defer></script>
 </head>
 <body>
+    <!-- Progress bar moved inside body and improved for accessibility -->    
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+        <div class="progress-text" id="progressText">0%</div>
     <section class="header">
         <h1 id="title">Yeoman Survey Form</h1>
         <h4 id="subtitle">Welcome to the Coast Guard Yeoman Customer Service Survey</h4>
@@ -23,57 +29,60 @@
             to complete.  Thank you for taking the time to share your thoughts and help us better serve you and the Coast Guard community.
         </p>
     </section>
+
     <form id="survey-form">
-        <fieldset class="fieldset1">
+        <fieldset class="form-section">
             <legend>General Information</legend>
-
-            <label for="name" id="name-label"><b>First Name</b></label>
-            <input id="name" type="text" required placeholder="Joe">
-            <br>
-
-            <label for="name" id="name-label"><b>Last Name</b></label>
-            <input id="name" type="text" required placeholder="Coastie">
-            <br>
-
-            <label for="rank"><b>Rank</b></label>
-            <select id="rank" required>
-                <option value="" disabled selected>Select Rank</option>
-                <option value="Admiral">Admiral</option>
-                <option value="Vice Admiral">Vice Admiral</option>
-                <option value="Rear Admiral (Upper Half)">Rear Admiral (Upper Half)</option>
-                <option value="Rear Admiral (Lower Half)">Rear Admiral (Lower Half)</option>
-                <option value="Captain">Captain</option>
-                <option value="Commander">Commander</option>
-                <option value="Lieutenant Commander">Lieutenant Commander</option>
-                <option value="Lieutenant">Lieutenant</option>
-                <option value="Lieutenant Junior Grade">Lieutenant Junior Grade</option>
-                <option value="Ensign">Ensign</option>
-                <option value="Chief Warrant Officer">Chief Warrant Officer</option>
-                <option value="Master Chief">Master Chief</option>
-                <option value="Senior Chief">Senior Chief</option>
-                <option value="Chief">Chief</option>
-                <option value="Petty Officer First Class">Petty Officer First Class</option>
-                <option value="Petty Officer Second Class">Petty Officer Second Class</option>
-                <option value="Petty Officer Third Class">Petty Officer Third Class</option>
-                <option value="Non Rate">Non Rate</option>
-            </select>
-            <br>
-
-            <label for="email" id="email-label"><b>Email</b></label>
-            <input id="email" type="email" required placeholder="Joe.Coastie@uscg.mil">
-            <br>
-
-            <label for="unit"><b>Unit</b></label>
-            <input id="unit" type="text" required placeholder="Enter your unit">
-            <br>
-
-            <label for="number" id="number-label"><b>Years of Service</b></label>
-            <input id="number" type="number" min="0" max="30" required placeholder="0">
+            <div class="form-group">
+                <label for="first-name"><b>First Name</b></label>
+                <input id="first-name" type="text" required placeholder="Joe">
+            </div>
+            <div class="form-group">
+                <label for="last-name"><b>Last Name</b></label>
+                <input id="last-name" type="text" required placeholder="Coastie">
+            </div>
+            <div class="form-group">
+                <label for="rank"><b>Rank</b></label>
+                <select id="rank" required>
+                    <option value="" disabled selected>Select Rank</option>
+                    <option value="Admiral">Admiral</option>
+                    <option value="Vice Admiral">Vice Admiral</option>
+                    <option value="Rear Admiral (Upper Half)">Rear Admiral (Upper Half)</option>
+                    <option value="Rear Admiral (Lower Half)">Rear Admiral (Lower Half)</option>
+                    <option value="Captain">Captain</option>
+                    <option value="Commander">Commander</option>
+                    <option value="Lieutenant Commander">Lieutenant Commander</option>
+                    <option value="Lieutenant">Lieutenant</option>
+                    <option value="Lieutenant Junior Grade">Lieutenant Junior Grade</option>
+                    <option value="Ensign">Ensign</option>
+                    <option value="Chief Warrant Officer">Chief Warrant Officer</option>
+                    <option value="Master Chief">Master Chief Petty Officer</option>
+                    <option value="Senior Chief">Senior Chief Petty Officer</option>
+                    <option value="Chief">Chief Petty Officer</option>
+                    <option value="Petty Officer First Class">Petty Officer First Class</option>
+                    <option value="Petty Officer Second Class">Petty Officer Second Class</option>
+                    <option value="Petty Officer Third Class">Petty Officer Third Class</option>
+                    <option value="Non Rate">Non Rate</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="email"><b>Email</b></label>
+                <input id="email" type="email" required placeholder="Joe.Coastie@uscg.mil">
+            </div>
+            <div class="form-group">
+                <label for="unit"><b>Unit</b></label>
+                <input id="unit" type="text" required placeholder="Enter your unit">
+            </div>
+            <div class="form-group">
+                <label for="years-of-service"><b>Years of Service</b></label>
+                <input id="years-of-service" type="number" min="0" max="30" required placeholder="0">
+            </div>
         </fieldset>
 
-        <fieldset class="fieldset2">
+        <fieldset class="form-section">
             <legend>Purpose of Visit / Interaction</legend>
-            <label>Select the purpose of your visit</label>
+            <label><b>Select the purpose of your visit</b></label>
+            <br>
             <br>
             <input type="checkbox" id="visit-pay" name="visit" value="Pay and Entitlements">
             <label for="visit-pay">Pay and Entitlements</label>
@@ -100,7 +109,7 @@
             <input id="visit-other" name="visit-other" type="text" placeholder="Other">
         </fieldset>
 
-        <fieldset class="fieldset3">
+        <fieldset class="form-section">
             <legend>Service Quality and Satisfacion</legend>
             <label for="service-quality"><b>How would you rate the quality of service you received (1-5 or Strongly Disagree to Strongly Agree)</b></label>
             <br>
@@ -130,7 +139,7 @@
             <span id="comfort-value">3</span>
         </fieldset>
 
-        <fieldset class="fieldset4">
+        <fieldset class="form-section">
             <legend>Timeliness</legend>
             <label for="timeliness"><b>How quickly was your issue resolved?</b></label>
             <br>
@@ -151,9 +160,57 @@
             <label for="timeliness-not-resolved">Not Resolved</label>
         </fieldset>
 
-        <fieldset class="fieldset5">
-            <legend>Additional Information</legend>
-            <textarea id="comments" rows="10" cols="70" placeholder="Enter any additional comments here..."></textarea>
+        <fieldset class="form-section">
+            <legend>Communication</legend>
+            <label><b>Did the Yeoman keep you informed of your request's status?</b></label>
+           <select id="communication">
+            <option value="" disabled selected>Select an option</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+           </select>
+           <br>
+           <br>
+           <textarea id="communication-comments" rows="4" cols="50" placeholder="If no, please explain..."></textarea>
+           <br>
+           <br>
+              <label><b>What was the form of communication?</b></label>
+              <select id="communication-method">
+                <option value="" disabled selected>Select an option</option>
+                <option value="In Person">In Person</option>
+                <option value="Email">Email</option>
+                <option value="Phone">Phone</option>
+                <option value="Teams">Microsoft Teams</option>
+              </select>
+            <br>
+            <br>
+            <label><b>Was communication clear and effective?</b></label>
+            <select id="communication-effectiveness">
+                <option value="" disabled selected>Select an option</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+            <br>
+            <br>
+            <label><b>If no, please explain:</b></label>
+            <br>
+            <textarea id="communication-effectiveness-comments" rows="4" cols="50" placeholder="Enter your comments here..."></textarea>
+        </fieldset>
+
+        <fieldset class="form-section">
+            <legend>Additional Comments and Suggestions</legend>
+            <label><b>What went well?</b></label>
+            <br>
+            <textarea id="comments" rows="5" cols="70" placeholder="Provide comments on what went well..."></textarea>
+            <br>
+            <br>
+            <label><b>What could be improved?</b></label>
+            <br>
+            <textarea id="improvements" rows="5" cols="70" placeholder="Provide comments on what could be improved..."></textarea>
+            <br>
+            <br>
+            <label><b>Additional feeback or recommendations:</b></label>
+            <br>
+            <textarea id="additional-feedback" rows="5" cols="70" placeholder="Provide any additional feedback or recommendations..."></textarea>
         </fieldset>
 
         <input type="submit" id="submit" value="Submit Form">
