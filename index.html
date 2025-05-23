@@ -9,51 +9,149 @@
 <body>
     <section class="header">
         <h1 id="title">Yeoman Survey Form</h1>
+        <h4 id="subtitle">Welcome to the Coast Guard Yeoman Customer Service Survey</h4>
         <p id="description">
-            This survey will collect information regarding your customer service experience.
+            Your feedback is essential to helping us improve the administrative support services by our Yeoman staff.
+            This short survey is designed to assess the quality, efficiency, and professionalism of the assistance you received.
+            <br>
+            <br>
+            Whether you visted for pay and entitlements, travel, orders, evaluations, or any other personnel-relted matter
+            ,your input helps us identify strengths, address concerns, and enhance the overall customer experience.
+            <br>
+            <br>
+            The survey is anonymous unless you choosse to provide identifying information, and should take no more than 5 mintures
+            to complete.  Thank you for taking the time to share your thoughts and help us better serve you and the Coast Guard community.
         </p>
     </section>
     <form id="survey-form">
         <fieldset class="fieldset1">
             <legend>General Information</legend>
 
-            <label for="name" id="name-label">First Name</label>
+            <label for="name" id="name-label"><b>First Name</b></label>
             <input id="name" type="text" required placeholder="Joe">
             <br>
 
-            <label for="name" id="name-label">Last Name</label>
+            <label for="name" id="name-label"><b>Last Name</b></label>
             <input id="name" type="text" required placeholder="Coastie">
             <br>
 
-            <label for="rank">Rank</label>
+            <label for="rank"><b>Rank</b></label>
             <select id="rank" required>
                 <option value="" disabled selected>Select Rank</option>
-                <option value="YNCM">YNCM</option>
-                <option value="YNCS">YNCS</option>
-                <option value="YNC">YNC</option>
-                <option value="YN1">YN1</option>
-                <option value="YN2">YN2</option>
-                <option value="YN3">YN3</option>
+                <option value="Admiral">Admiral</option>
+                <option value="Vice Admiral">Vice Admiral</option>
+                <option value="Rear Admiral (Upper Half)">Rear Admiral (Upper Half)</option>
+                <option value="Rear Admiral (Lower Half)">Rear Admiral (Lower Half)</option>
+                <option value="Captain">Captain</option>
+                <option value="Commander">Commander</option>
+                <option value="Lieutenant Commander">Lieutenant Commander</option>
+                <option value="Lieutenant">Lieutenant</option>
+                <option value="Lieutenant Junior Grade">Lieutenant Junior Grade</option>
+                <option value="Ensign">Ensign</option>
+                <option value="Chief Warrant Officer">Chief Warrant Officer</option>
+                <option value="Master Chief">Master Chief</option>
+                <option value="Senior Chief">Senior Chief</option>
+                <option value="Chief">Chief</option>
+                <option value="Petty Officer First Class">Petty Officer First Class</option>
+                <option value="Petty Officer Second Class">Petty Officer Second Class</option>
+                <option value="Petty Officer Third Class">Petty Officer Third Class</option>
+                <option value="Non Rate">Non Rate</option>
             </select>
             <br>
 
-            <label for="email" id="email-label">Email</label>
+            <label for="email" id="email-label"><b>Email</b></label>
             <input id="email" type="email" required placeholder="Joe.Coastie@uscg.mil">
             <br>
 
-            <label for="unit">Unit</label>
+            <label for="unit"><b>Unit</b></label>
             <input id="unit" type="text" required placeholder="Enter your unit">
             <br>
 
-            <label for="number" id="number-label">Years of Service</label>
+            <label for="number" id="number-label"><b>Years of Service</b></label>
             <input id="number" type="number" min="0" max="30" required placeholder="0">
         </fieldset>
 
-        <fieldset>
-            <legend>Purpose of Vist / Interaction</legend>
+        <fieldset class="fieldset2">
+            <legend>Purpose of Visit / Interaction</legend>
+            <label>Select the purpose of your visit</label>
+            <br>
+            <input type="checkbox" id="visit-pay" name="visit" value="Pay and Entitlements">
+            <label for="visit-pay">Pay and Entitlements</label>
+            <br>
+            <input type="checkbox" id="visit-travel" name="visit" value="Travel Claim">
+            <label for="visit-travel">Travel Claim</label>
+            <br>
+            <input type="checkbox" id="visit-orders" name="visit" value="Orders">
+            <label for="visit-orders">Orders (PCS / TDY)</label>
+            <br>
+            <input type="checkbox" id="visit-evaluations" name="visit" value="Evaluations">
+            <label for="visit-evaluations">Evaluations (EER / OER)</label>
+            <br>
+            <input type="checkbox" id="visit-admin" name="visit" value="Admin">
+            <label for="visit-admin">Awards / Admin Paperwork</label>
+            <br>
+            <input type="checkbox" id="visit-leave" name="visit" value="Leave">
+            <label for="visit-leave">Leave / P&A Support</label>
+            <br>
+            <input type="checkbox" id="visit-deers" name="visit" value="DEERS">
+            <label for="visit-deers">DEERS / ID Cards</label>
+            <br>
+            <label for="visit-other">Other (please specify):</label>
+            <input id="visit-other" name="visit-other" type="text" placeholder="Other">
         </fieldset>
 
-        <fieldset class="fieldset2">
+        <fieldset class="fieldset3">
+            <legend>Service Quality and Satisfacion</legend>
+            <label for="service-quality"><b>How would you rate the quality of service you received (1-5 or Strongly Disagree to Strongly Agree)</b></label>
+            <br>
+            <br>
+            <label>The Yeoman was professional and courteous</label>
+            <input type="range" id="professionalism" name="professionalism" min="1" max="5" step="1" value="3" oninput="document.getElementById('professionalism-value').textContent = this.value;">
+            <span id="professionalism-value">3</span>
+            <br>
+            <label>My issue was understood clearly</label>
+            <input type="range" id="understanding" name="understanding" min="1" max="5" step="1" value="3" oninput="document.getElementById('understanding-value').textContent = this.value;">
+            <span id="understanding-value">3</span>
+            <br>
+            <label>My concern was resolved in a timely manner</label>
+            <input type="range" id="timeliness" name="timeliness" min="1" max="5" step="1" value="3" oninput="document.getElementById('timeliness-value').textContent = this.value;">
+            <span id="timeliness-value">3</span>
+            <br>
+            <label>I was provided with accurate and helpful information</label>
+            <input type="range" id="accuracy" name="accuracy" min="1" max="5" step="1" value="3" oninput="document.getElementById('accuracy-value').textContent = this.value;">
+            <span id="accuracy-value">3</span>
+            <br>
+            <label>I felt confident in the Yeoman's knowledge and ability</label>
+            <input type="range" id="confidence" name="confidence" min="1" max="5" step="1" value="3" oninput="document.getElementById('confidence-value').textContent = this.value;">
+            <span id="confidence-value">3</span>
+            <br>
+            <label>I would feel comfortable returning to this Yeoman for future needs</label>
+            <input type="range" id="comfort" name="comfort" min="1" max="5" step="1" value="3" oninput="document.getElementById('comfort-value').textContent = this.value;">
+            <span id="comfort-value">3</span>
+        </fieldset>
+
+        <fieldset class="fieldset4">
+            <legend>Timeliness</legend>
+            <label for="timeliness"><b>How quickly was your issue resolved?</b></label>
+            <br>
+            <br>
+            <input type="radio" id="timeliness-same-day" name="timeliness" value="Same Day">
+            <label for="timeliness-same-day">Same Day</label>
+            <br>
+            <input type="radio" id="timeliness-1-2-days" name="timeliness" value="1-2 Days">
+            <label for="timeliness-1-2-days">1-2 Days</label>
+            <br>
+            <input type="radio" id="timeliness-3-5-days" name="timeliness" value="3-5 Days">
+            <label for="timeliness-3-5-days">3-5 Days</label>
+            <br>
+            <input type="radio" id="timeliness-over-5-days" name="timeliness" value="Over 5 Days">
+            <label for="timeliness-over-5-days">Over 5 Days</label>
+            <br>
+            <input type="radio" id="timeliness-not-resolved" name="timeliness" value="Not Resolved">
+            <label for="timeliness-not-resolved">Not Resolved</label>
+        </fieldset>
+
+        <fieldset class="fieldset5">
             <legend>Additional Information</legend>
             <textarea id="comments" rows="10" cols="70" placeholder="Enter any additional comments here..."></textarea>
         </fieldset>

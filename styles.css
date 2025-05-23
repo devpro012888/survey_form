@@ -1,8 +1,10 @@
-h1 {
-    text-align: center;
+body {
+    width: 800px;
+    margin: 0 auto;
+    background-color: darkgray;
 }
 
-p {
+h1 {
     text-align: center;
 }
 
@@ -15,16 +17,57 @@ p {
     border: 2px solid black;
     padding: 20px;
     margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    background-color: white;
+}
+
+.fieldset1 label,
+.fieldset1 input,
+.fieldset1 select {
+    text-align: left;
+    width: 100%;
+    max-width: 350px;
+    box-sizing: border-box;
+}
+
+.fieldset1 br {
+    display: none;
 }
 
 .fieldset2 {
     border: 2px solid black;
     padding: 20px;
     margin: 20px;
+    background-color: white;
+}
+
+.fieldset3 {
+    border: 2px solid black;
+    padding: 20px;
+    margin: 20px;
+    background-color: white;
+}
+
+.fieldset4 {
+    border: 2px solid black;
+    padding: 20px;
+    margin: 20px;
+    background-color: white;
+}
+
+.fieldset5 {
+    border: 2px solid black;
+    padding: 20px;
+    margin: 20px;
+    background-color: white;
 }
 
 input[type="submit"] {
     display: block;
     margin: 0 auto;
     cursor: pointer;
+    margin-bottom: 15px;
 }
