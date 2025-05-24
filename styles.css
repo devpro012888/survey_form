@@ -2,6 +2,7 @@ body {
     width: 800px;
     margin: 0 auto;
     background-color: darkgray;
+    padding-top: 60px; /* Ensure content is not hidden behind fixed progress bar */
 }
 
 p {
@@ -86,9 +87,7 @@ input[type="submit"]:focus {
   left: 0;
   z-index: 1000;
   border-radius: 0;
-  overflow: hidden;
 }
-
 
 .progress-bar {
   height: 100%;
