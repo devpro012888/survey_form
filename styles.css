@@ -49,6 +49,11 @@ h1 {
     background-color: white;
 }
 
+.section-name {
+    background-color: black;
+    color: white;
+}
+
 input[type="submit"] {
     display: block;
     margin: 0 auto;
@@ -94,18 +99,25 @@ input[type="submit"]:focus {
   width: 0%;
   background-color: #4caf50;
   transition: width 0.3s ease;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .progress-text {
   text-align: center;
   font-weight: bold;
-  margin-bottom: 20px;
-  position: fixed;
-  top: 25px;
+  margin-bottom: 0;
+  position: absolute;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
-  z-index: 1001;
-  background-color: white;
-  padding: 2px 8px;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  background: transparent;
+  padding: 0;
+  color: #222;
+  width: 100%;
   font-weight: bold;
+  pointer-events: none;
 }

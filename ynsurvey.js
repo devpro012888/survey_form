@@ -33,4 +33,8 @@ function updateProgressBar() {
     progressText.innerText = percent + "%";
   }
 }
+//Form Alert
+window.onload = function() {
+  alert("Welcome to the Yeoman Survey Form! Please fill out the survey form. Your feedback is important to us.");
+};
 
